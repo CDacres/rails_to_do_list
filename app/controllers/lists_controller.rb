@@ -1,5 +1,4 @@
 class ListsController < ApplicationController
-  before_action :authenticate_user!
   def index
     @lists = current_user.lists
   end
@@ -13,7 +12,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    new_list = current_user.lists.create(book_params)
+    new_list = current_user.lists.create(list_params)
     new_list.save
     redirect_to new_list
   end

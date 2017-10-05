@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
 	def home
-		@lists = List.all
-       render template: "lists/index"
+		@lists = current_user.lists
+		render template: "lists/index"
 	end
 end
