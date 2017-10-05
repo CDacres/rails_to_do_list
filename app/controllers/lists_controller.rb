@@ -35,7 +35,7 @@ class ListsController < ApplicationController
 
   def destroy
     current_user.lists.destroy(params[:id])
-    redirect_to list_url
+    redirect_to "/lists"
   end
 
   protected
